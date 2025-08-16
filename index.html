@@ -8,23 +8,41 @@
     body {
       font-family: Arial, sans-serif;
       margin: 2rem;
-      background-color: #f9f9f9;
+      background-color: #f0f4f8;
       color: #333;
-      line-height: 1.6;
     }
 
-    h1, h2 {
+    h1 {
       color: #2c3e50;
       text-align: center;
+      margin-bottom: 3rem;
     }
 
-    h2 {
-      margin-top: 3rem;
+    .card {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .card h2 {
+      margin-top: 0;
+      color: #1a237e;
+    }
+
+    .card p {
+      font-size: 1rem;
+      margin: 0.5rem 0 1rem 0;
     }
 
     a {
       color: #007BFF;
       text-decoration: none;
+      font-weight: bold;
     }
 
     a:hover {
@@ -33,16 +51,16 @@
 
     .pdf-container {
       display: block;
-      margin: 2rem auto;
       width: 100%;
-      max-width: 1000px;
-      height: 1000px;
+      height: 800px;
       border: 1px solid #ccc;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-top: 1rem;
     }
 
-    .section {
-      margin-bottom: 2rem;
+    @media (max-width: 768px) {
+      .pdf-container {
+        height: 500px;
+      }
     }
   </style>
 </head>
@@ -50,30 +68,33 @@
 
   <h1>Zachary Abbe – CS499 Portfolio</h1>
 
-  <div class="section">
+  <!-- Self Assessment Card -->
+  <div class="card">
     <h2>Professional Self-Assessment</h2>
+    <p>This document reflects on my development throughout the CS program and demonstrates fulfillment of program outcomes.</p>
     <embed src="Self-Assessment.pdf" type="application/pdf" class="pdf-container">
-    <p style="text-align:center;">
-      <a href="Self-Assessment.pdf" target="_blank">Open in a new tab</a> if the document doesn't display properly.
-    </p>
+    <p><a href="Self-Assessment.pdf" target="_blank">Open in new tab</a> if PDF does not load.</p>
   </div>
-<div class="section">
-    <h2>Original Code Submission</h2>
-    <p>This version reflects the initial implementation of the project before enhancements were added.</p>
-    <p><a href="Module1 - Zachary Abbe - CS499/index.html" target="_blank">View Original Module 1 Project</a></p>
+
+  <!-- Original Code Card -->
+  <div class="card">
+    <h2>Original Project Code (Pre-Enhancements)</h2>
+    <p>The initial implementation of the dashboard before code optimization and enhancements.</p>
+    <p><a href="Module1 - Zachary Abbe - CS499/index.html" target="_blank">View Original Project</a></p>
   </div>
-  <div class="section">
+
+  <!-- Refactored Code Card -->
+  <div class="card">
     <h2>Refactored Java to C++ Project</h2>
-    <p>This refactored version demonstrates converting the backend from Java to C++.</p>
-    <p><a href="CS499 Project1 - ZacharyAbbe/index.html" target="_blank">View Java-to-C++ Refactored Project</a></p>
+    <p>This version refactors the original Java backend logic into C++, demonstrating language fluency and software engineering skills.</p>
+    <p><a href="CS499 Project1 - ZacharyAbbe/index.html" target="_blank">View Refactored Project</a></p>
   </div>
   
-  <div class="project-card">
-    <h2>CS-340: Animal Shelter Dashboard</h2>
-    <p>Interactive dashboard built with Python Dash and MongoDB to filter animal shelter data by rescue types.</p>
-    <a href="http://127.0.0.1:8050" target="_blank">🚀 Launch Dashboard (Local)</a>
-    <br>
-    <small>If not running, start the Jupyter notebook to launch it.</small>
+  <!-- Dashboard Card -->
+  <div class="card">
+    <h2>Final Project: Interactive Animal Shelter Dashboard</h2>
+    <p>This interactive dashboard uses Dash and MongoDB to visualize and filter adoptable animals by rescue type and location.</p>
+    <p><a href="dashboard/index.html" target="_blank">View Final Dashboard Project</a></p>
   </div>
 
   
