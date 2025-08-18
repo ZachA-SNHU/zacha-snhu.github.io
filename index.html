@@ -5,55 +5,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Zachary Abbe – CS499 Portfolio</title>
   <style>
+    /* Matrix canvas fills the entire screen behind all content */
     body {
+      margin: 0;
       font-family: Arial, sans-serif;
-      margin: 2rem;
-      background-color: #f0f4f8;
-      color: #333;
+      background: black;
+      overflow-x: hidden;
+      color: #00ff00;
     }
 
-    h1 {
-      color: #2c3e50;
+    canvas#matrix {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    h1, h2 {
+      color: #00ff00;
       text-align: center;
-      margin-bottom: 3rem;
+      text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
     }
 
     .card {
-      background-color: white;
+      background-color: rgba(0, 0, 0, 0.85);
       border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 10px #00ff00;
       padding: 2rem;
-      margin-bottom: 2rem;
+      margin: 2rem auto;
       max-width: 1000px;
-      margin-left: auto;
-      margin-right: auto;
+      color: #00ff00;
     }
 
-    .card h2 {
-      margin-top: 0;
-      color: #1a237e;
-    }
-
-    .card p {
-      font-size: 1rem;
-      margin: 0.5rem 0 1rem 0;
-    }
-
-    a {
-      color: #007BFF;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    a:hover {
+    .card a {
+      color: #00ff00;
       text-decoration: underline;
+    }
+
+    .card a:hover {
+      text-shadow: 0 0 5px #00ff00;
     }
 
     .pdf-container {
       display: block;
       width: 100%;
       height: 800px;
-      border: 1px solid #ccc;
+      border: 1px solid #00ff00;
       margin-top: 1rem;
     }
 
@@ -66,20 +63,23 @@
 </head>
 <body>
 
-  <h1>Zachary Abbe – CS499 Portfolio</h1>
+<!-- Matrix Canvas Background -->
+<canvas id="matrix"></canvas>
 
-  <!-- Self Assessment Card -->
-  <div class="card">
-    <h2>Professional Self-Assessment</h2>
-    <p>This document reflects on my development throughout the CS program and demonstrates fulfillment of program outcomes.</p>
-    <embed src="Self-Assessment.pdf" type="application/pdf" class="pdf-container">
-    <p><a href="Self-Assessment.pdf" target="_blank">Open in new tab</a> if PDF does not load.</p>
-  </div>
+<h1>Zachary Abbe – CS499 Portfolio</h1>
 
-  <!-- Youtube link to code review -->
-  <div class="card">
+<!-- Self Assessment Card -->
+<div class="card">
+  <h2>Professional Self-Assessment</h2>
+  <p>This document reflects on my development throughout the CS program and demonstrates fulfillment of program outcomes.</p>
+  <embed src="Self-Assessment.pdf" type="application/pdf" class="pdf-container">
+  <p><a href="Self-Assessment.pdf" target="_blank">Open in new tab</a> if PDF does not load.</p>
+</div>
+
+<!-- Code Review Video -->
+<div class="card">
   <h2>Professional Code Review</h2>
-  <p>Watch my walkthrough and commentary on my intial project codebase and design choices.</p>
+  <p>Watch my walkthrough and commentary on my initial project codebase and design choices.</p>
   <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; max-width:100%;">
     <iframe 
       src="https://www.youtube.com/embed/US11L4Z5ar4" 
@@ -91,34 +91,72 @@
   </div>
 </div>
 
-  <!-- Original Code Card -->
-  <div class="card">
-    <h2>Original Project Code (Pre-Enhancements)</h2>
-    <p>The initial implementation of the dashboard before code optimization and enhancements.</p>
-     <a href="https://github.com/ZachA-SNHU/zacha-snhu.github.io/tree/main/Module1-ZacharyAbbe-CS499" target="_blank">View on GitHub</a>
-  </div>
+<!-- Original Code Card -->
+<div class="card">
+  <h2>Original Project Code (Pre-Enhancements)</h2>
+  <p>The initial implementation of the dashboard before code optimization and enhancements.</p>
+  <a href="https://github.com/ZachA-SNHU/zacha-snhu.github.io/tree/main/Module1-ZacharyAbbe-CS499" target="_blank">View on GitHub</a>
+</div>
 
-  <!-- Refactored Code Card -->
-  <div class="card">
-    <h2>Refactored Java to C++ Project</h2>
-    <p>This version refactors the original Java backend logic into C++, demonstrating language fluency and software engineering skills.</p>
-    <a href="https://github.com/ZachA-SNHU/zacha-snhu.github.io/tree/main/CS499Project1and2-ZacharyAbbe" target="_blank">View Project on GitHub</a>
-  </div>
-  
-  <!-- Dashboard Card -->
- <div class="card">
-    <h2>CS-340: Animal Shelter Dashboard</h2>
-    <p>Interactive dashboard built with Python Dash and MongoDB to filter animal shelter data by rescue types.</p>
-    <a href="http://127.0.0.1:8050" target="_blank">🚀 Launch Dashboard (Local)</a>
-   <a href="Project3-ZacharyAbbe-CS499/" target="_blank">View Project</a>
-    <br>
-    <small>If not running, start the Jupyter notebook to launch it.</small>
-   <a href="https://github.com/ZachA-SNHU/zacha-snhu.github.io/tree/main/Project3-ZacharyAbbe-CS499" target="_blank">View on GitHub</a>
-  </div>
+<!-- Refactored Code Card -->
+<div class="card">
+  <h2>Refactored Java to C++ Project</h2>
+  <p>This version refactors the original Java backend logic into C++, demonstrating language fluency and software engineering skills.</p>
+  <a href="https://github.com/ZachA-SNHU/zacha-snhu.github.io/tree/main/CS499Project1and2-ZacharyAbbe" target="_blank">View Project on GitHub</a>
+</div>
 
-  
+<!-- Dashboard Card -->
+<div class="card">
+  <h2>CS-340: Animal Shelter Dashboard</h2>
+  <p>Interactive dashboard built with Python Dash and MongoDB to filter animal shelter data by rescue types.</p>
+  <a href="Project3-ZacharyAbbe-CS499/" target="_blank">View Project</a> |
+  <a href="https://github.com/ZachA-SNHU/zacha-snhu.github.io/tree/main/Project3-ZacharyAbbe-CS499" target="_blank">GitHub Repo</a>
+</div>
 
-  
+<!-- Matrix Effect Script -->
+<script>
+  var canvas = document.getElementById("matrix");
+  var ctx = canvas.getContext("2d");
+
+  // Full screen canvas
+  canvas.height = window.innerHeight;
+  canvas.width = window.innerWidth;
+
+  var letters = "01";
+  letters = letters.split("");
+
+  var fontSize = 14;
+  var columns = canvas.width / fontSize;
+  var drops = [];
+
+  for (var x = 0; x < columns; x++)
+    drops[x] = 1;
+
+  function draw() {
+    ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = "#0F0"; // green text
+    ctx.font = fontSize + "px monospace";
+
+    for (var i = 0; i < drops.length; i++) {
+      var text = letters[Math.floor(Math.random() * letters.length)];
+      ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+      if (drops[i] * fontSize > canvas.height && Math.random() > 0.975)
+        drops[i] = 0;
+
+      drops[i]++;
+    }
+  }
+
+  setInterval(draw, 33);
+
+  window.addEventListener('resize', () => {
+    canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth;
+  });
+</script>
 
 </body>
 </html>
